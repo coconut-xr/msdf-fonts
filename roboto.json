@@ -1,6 +1,6 @@
 {
     "pages": [
-        "roboto-regular.png"
+        "roboto.png"
     ],
     "chars": [
         {
@@ -1335,7 +1335,7 @@
         }
     ],
     "info": {
-        "face": "Roboto-Regular",
+        "face": "roboto",
         "size": 42,
         "bold": 0,
         "italic": 0,

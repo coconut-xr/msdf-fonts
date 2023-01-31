@@ -1,6 +1,6 @@
 {
     "pages": [
-        "sourceserifpro-regular.png"
+        "sourceserifpro.png"
     ],
     "chars": [
         {
@@ -1335,7 +1335,7 @@
         }
     ],
     "info": {
-        "face": "SourceSerifPro-Regular",
+        "face": "sourceserifpro",
         "size": 42,
         "bold": 0,
         "italic": 0,
