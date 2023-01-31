@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
   "dependencies": {
+    "download-cli": "^1.1.1",
     "msdf-bmfont-xml": "^2.7.0"
   }
 }
