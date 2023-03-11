@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Generate Roboto
-        run: npx download -o ./ --filename roboto.ttf https://github.com/google/fonts/raw/main/apache/roboto/static/Roboto-Regular.ttf; npx msdf-bmfont -f json roboto.ttf -m 512,512 -o public/roboto
+        run: npx download -o ./ --filename roboto.ttf https://github.com/openmaptiles/fonts/blob/master/roboto/Roboto-Regular.ttf?raw=true; npx msdf-bmfont -f json roboto.ttf -m 512,512 -o public/roboto
 
       - name: Generate SourceSerifPro
         run: npx download -o ./ --filename sourceserifpro.ttf  https://github.com/google/fonts/raw/main/ofl/sourceserifpro/SourceSerifPro-Regular.ttf; npx msdf-bmfont -f json sourceserifpro.ttf -m 512,512 -o public/sourceserifpro
