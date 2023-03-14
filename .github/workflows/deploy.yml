@@ -23,19 +23,19 @@ jobs:
         run: npm install
 
       - name: Generate Roboto
-        run: npx download -o ./ --filename roboto.ttf https://github.com/openmaptiles/fonts/blob/master/roboto/Roboto-Regular.ttf?raw=true; npx msdf-bmfont -f json roboto.ttf -m 512,512 -o public/roboto
+        run: npx download -o ./ --filename roboto.ttf https://github.com/openmaptiles/fonts/blob/master/roboto/Roboto-Regular.ttf?raw=true; npx msdf-bmfont -f json roboto.ttf -m 256,512 -o public/roboto -s 54
 
       - name: Generate SourceSerifPro
-        run: npx download -o ./ --filename sourceserifpro.ttf  https://github.com/google/fonts/raw/main/ofl/sourceserifpro/SourceSerifPro-Regular.ttf; npx msdf-bmfont -f json sourceserifpro.ttf -m 512,512 -o public/sourceserifpro
+        run: npx download -o ./ --filename sourceserifpro.ttf  https://github.com/google/fonts/raw/main/ofl/sourceserifpro/SourceSerifPro-Regular.ttf; npx msdf-bmfont -f json sourceserifpro.ttf -m 256,512 -o public/sourceserifpro -s 54
 
       - name: Generate OpenSans
-        run: npx download -o ./ --filename opensans.ttf https://github.com/google/fonts/raw/main/ofl/opensans/OpenSans%5Bwdth%2Cwght%5D.ttf; npx msdf-bmfont -f json opensans.ttf -m 512,512 -o public/opensans
+        run: npx download -o ./ --filename opensans.ttf https://github.com/google/fonts/raw/main/ofl/opensans/OpenSans%5Bwdth%2Cwght%5D.ttf; npx msdf-bmfont -f json opensans.ttf -m 256,512 -o public/opensans -s 54
 
       - name: Generate Montserrat
-        run: npx download -o ./ --filename montserrat.ttf https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf; npx msdf-bmfont -f json montserrat.ttf -m 512,512 -o public/montserrat
+        run: npx download -o ./ --filename montserrat.ttf https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf; npx msdf-bmfont -f json montserrat.ttf -m 256,512 -o public/montserrat -s 54
 
       - name: Generate Quicksand
-        run: npx download -o ./ --filename quicksand.ttf https://github.com/google/fonts/raw/main/ofl/quicksand/Quicksand%5Bwght%5D.ttf; npx msdf-bmfont -f json quicksand.ttf -m 512,512 -o public/quicksand
+        run: npx download -o ./ --filename quicksand.ttf https://github.com/google/fonts/raw/main/ofl/quicksand/Quicksand%5Bwght%5D.ttf; npx msdf-bmfont -f json quicksand.ttf -m 256,512 -o public/quicksand -s 54
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
