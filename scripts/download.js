@@ -15,7 +15,7 @@ https.get(`https://www.googleapis.com/webfonts/v1/webfonts?family=${fontFamily}&
         try {
             let json = JSON.parse(body);
             if(json.error != null) {
-                console.error(json.error)
+                console.error("fetch font families", fontFamily, json.error)
                 return
             }
             const [,url] = Object.entries(json.items[0].files).find(([name]) => name.toLocaleLowerCase() === variant.toLocaleLowerCase())
@@ -40,9 +40,9 @@ function download(url) {
                 file.close();
             });
         }).on("error", (error) => {
-            console.error("download", url, error.message);
+            console.error("download", error.message);
         });
     } catch (error) {
-        console.error("download", url, error.message);
+        console.error("download", error.message);
     };
 }
