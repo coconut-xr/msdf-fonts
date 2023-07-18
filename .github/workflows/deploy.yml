@@ -6,13 +6,13 @@ on:
 
 jobs:
   generate:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
 
       - name: Install Font Forge
-        run: sudo apt-get install software-properties-common; sudo add-apt-repository ppa:fontforge/fontforge; sudo apt-get update; sudo apt-get install fontforge;
+        run: sudo apt-get install -y fontforge;
 
       - name: Checkout code
         uses: actions/checkout@v3
