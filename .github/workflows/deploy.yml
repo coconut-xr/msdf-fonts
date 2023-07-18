@@ -40,8 +40,8 @@ jobs:
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto-light.ttf;
               npx msdf-bmfont -f json roboto-light.ttf -m 256,512 -o public/roboto-light -s 51
 
-      - name: Generate Roboto Regular
-        run:  node scripts/download.js "Roboto" regular;
+      - name: Generate Roboto Medium
+        run:  node scripts/download.js "Roboto" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto.ttf;
               npx msdf-bmfont -f json roboto.ttf -m 256,512 -o public/roboto -s 51
       
@@ -57,8 +57,8 @@ jobs:
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans-light.ttf;
               npx msdf-bmfont -f json opensans-light.ttf -m 256,512 -o public/opensans-light -s 51
 
-      - name: Generate Open Sans Regular
-        run:  node scripts/download.js "Open Sans" regular;
+      - name: Generate Open Sans Medium
+        run:  node scripts/download.js "Open Sans" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans.ttf;
               npx msdf-bmfont -f json opensans.ttf -m 256,512 -o public/opensans -s 51
 
@@ -74,8 +74,8 @@ jobs:
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter-light.ttf;
               npx msdf-bmfont -f json inter-light.ttf -m 256,512 -o public/inter-light -s 51
 
-      - name: Generate Inter Regular
-        run:  node scripts/download.js "Inter" regular;
+      - name: Generate Inter Medium
+        run:  node scripts/download.js "Inter" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter.ttf;
               npx msdf-bmfont -f json inter.ttf -m 256,512 -o public/inter -s 51
 
@@ -91,8 +91,8 @@ jobs:
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-light.ttf;
               npx msdf-bmfont -f json firacode-light.ttf -m 256,512 -o public/firacode-light -s 51
 
-      - name: Generate Fira Code Regular
-        run:  node scripts/download.js "Fira Code" regular;
+      - name: Generate Fira Code Medium
+        run:  node scripts/download.js "Fira Code" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode.ttf;
               npx msdf-bmfont -f json firacode.ttf -m 256,512 -o public/firacode -s 51
 
