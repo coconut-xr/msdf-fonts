@@ -41,7 +41,7 @@ jobs:
               npx msdf-bmfont -f json roboto-light.ttf -i charset.txt -m 256,512 -o public/roboto-light -s 48
 
       - name: Generate Roboto Medium
-        run:  node scripts/download.js "Roboto" 480;
+        run:  node scripts/download.js "Roboto" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto.ttf;
               npx msdf-bmfont -f json roboto.ttf -i charset.txt -m 256,512 -o public/roboto -s 48
       
@@ -58,7 +58,7 @@ jobs:
               npx msdf-bmfont -f json opensans-light.ttf -i charset.txt -m 256,512 -o public/opensans-light -s 48
 
       - name: Generate Open Sans Medium
-        run:  node scripts/download.js "Open Sans" 480;
+        run:  node scripts/download.js "Open Sans" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans.ttf;
               npx msdf-bmfont -f json opensans.ttf -i charset.txt -m 256,512 -o public/opensans -s 48
 
@@ -75,7 +75,7 @@ jobs:
               npx msdf-bmfont -f json inter-light.ttf -i charset.txt -m 256,512 -o public/inter-light -s 48
 
       - name: Generate Inter Medium
-        run:  node scripts/download.js "Inter" 480;
+        run:  node scripts/download.js "Inter" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter.ttf;
               npx msdf-bmfont -f json inter.ttf -i charset.txt -m 256,512 -o public/inter -s 48
 
@@ -92,7 +92,7 @@ jobs:
               npx msdf-bmfont -f json firacode-light.ttf -i charset.txt -m 256,512 -o public/firacode-light -s 48
 
       - name: Generate Fira Code Medium
-        run:  node scripts/download.js "Fira Code" 480;
+        run:  node scripts/download.js "Fira Code" 500;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode.ttf;
               npx msdf-bmfont -f json firacode.ttf -i charset.txt -m 256,512 -o public/firacode -s 48
 
