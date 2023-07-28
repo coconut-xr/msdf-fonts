@@ -2,5 +2,8 @@
   "dependencies": {
     "download-cli": "^1.1.1",
     "msdf-bmfont-xml": "^2.7.0"
+  },
+  "devDependencies": {
+    "sharp-cli": "^4.1.1"
   }
 }

@@ -100,7 +100,14 @@ jobs:
         run:  node scripts/download.js "Fira Code" 700;
               fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-bold.ttf;
               npx msdf-bmfont -f json firacode-bold.ttf -i charset.txt -m 256,512 -o public/firacode-bold -s 48
-              
+      
+      - name: Convert to Webp
+        run:  npx sharp -i public/* -o public/ -f webp
+
+      - name: Replace file png files
+        run: |
+          sed -i 's/png/webp/g' public/*.json
+          rm public/*.json
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
