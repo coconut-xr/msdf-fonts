@@ -107,7 +107,7 @@ jobs:
       - name: Replace file png files
         run: |
           sed -i 's/png/webp/g' public/*.json
-          rm public/*.json
+          rm public/*.png
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
