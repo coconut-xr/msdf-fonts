@@ -12,13 +12,11 @@ jobs:
     permissions:
       contents: write
     steps:
-
       - name: Install Font Forge
         run: sudo apt-get install -y fontforge;
 
       - name: Checkout code
         uses: actions/checkout@v3
-
 
       - name: Copy LICENSE to public
         run: |
@@ -33,76 +31,93 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-# Roboto
+      # Roboto
 
       - name: Generate Roboto Light
-        run:  node scripts/download.js "Roboto" 300;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto-light.ttf;
-              npx msdf-bmfont -f json roboto-light.ttf -i charset.txt -m 256,512 -o public/roboto-light -s 48
+        run: node scripts/download.js "Roboto" 300;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto-light.ttf;
+          npx msdf-bmfont -f json roboto-light.ttf -i charset.txt -m 256,512 -o public/roboto-light -s 48
 
       - name: Generate Roboto Medium
-        run:  node scripts/download.js "Roboto" 500;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto.ttf;
-              npx msdf-bmfont -f json roboto.ttf -i charset.txt -m 256,512 -o public/roboto -s 48
-      
-      - name: Generate Roboto Bold
-        run:  node scripts/download.js "Roboto" 700;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto-bold.ttf;
-              npx msdf-bmfont -f json roboto-bold.ttf -i charset.txt -m 256,512 -o public/roboto-bold -s 48
+        run: node scripts/download.js "Roboto" 500;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto.ttf;
+          npx msdf-bmfont -f json roboto.ttf -i charset.txt -m 256,512 -o public/roboto -s 48
 
-# Open Sans
+      - name: Generate Roboto Bold
+        run: node scripts/download.js "Roboto" 700;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf roboto-bold.ttf;
+          npx msdf-bmfont -f json roboto-bold.ttf -i charset.txt -m 256,512 -o public/roboto-bold -s 48
+
+      # Open Sans
 
       - name: Generate Open Sans Light
-        run:  node scripts/download.js "Open Sans" 300;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans-light.ttf;
-              npx msdf-bmfont -f json opensans-light.ttf -i charset.txt -m 256,512 -o public/opensans-light -s 48
+        run: node scripts/download.js "Open Sans" 300;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans-light.ttf;
+          npx msdf-bmfont -f json opensans-light.ttf -i charset.txt -m 256,512 -o public/opensans-light -s 48
 
       - name: Generate Open Sans Medium
-        run:  node scripts/download.js "Open Sans" 500;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans.ttf;
-              npx msdf-bmfont -f json opensans.ttf -i charset.txt -m 256,512 -o public/opensans -s 48
+        run: node scripts/download.js "Open Sans" 500;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans.ttf;
+          npx msdf-bmfont -f json opensans.ttf -i charset.txt -m 256,512 -o public/opensans -s 48
 
       - name: Generate OpenSans Bold
-        run:  node scripts/download.js "Open Sans" 700;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans-bold.ttf;
-              npx msdf-bmfont -f json opensans-bold.ttf -i charset.txt -m 256,512 -o public/opensans-bold -s 48
+        run: node scripts/download.js "Open Sans" 700;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf opensans-bold.ttf;
+          npx msdf-bmfont -f json opensans-bold.ttf -i charset.txt -m 256,512 -o public/opensans-bold -s 48
 
-# Inter
+      # Inter
 
       - name: Generate Inter Light
-        run:  node scripts/download.js "Inter" 300;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter-light.ttf;
-              npx msdf-bmfont -f json inter-light.ttf -i charset.txt -m 256,512 -o public/inter-light -s 48
+        run: node scripts/download.js "Inter" 300;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter-light.ttf;
+          npx msdf-bmfont -f json inter-light.ttf -i charset.txt -m 256,512 -o public/inter-light -s 48
 
       - name: Generate Inter Medium
-        run:  node scripts/download.js "Inter" 500;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter.ttf;
-              npx msdf-bmfont -f json inter.ttf -i charset.txt -m 256,512 -o public/inter -s 48
+        run: node scripts/download.js "Inter" 500;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter.ttf;
+          npx msdf-bmfont -f json inter.ttf -i charset.txt -m 256,512 -o public/inter -s 48
 
       - name: Generate Inter Bold
-        run:  node scripts/download.js "Inter" 700;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter-bold.ttf;
-              npx msdf-bmfont -f json inter-bold.ttf -i charset.txt -m 256,512 -o public/inter-bold -s 48
+        run: node scripts/download.js "Inter" 700;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf inter-bold.ttf;
+          npx msdf-bmfont -f json inter-bold.ttf -i charset.txt -m 256,512 -o public/inter-bold -s 48
 
-# Fira Code
+      # Fira Code
 
       - name: Generate Fira Code Light
-        run:  node scripts/download.js "Fira Code" 300;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-light.ttf;
-              npx msdf-bmfont -f json firacode-light.ttf -i charset.txt -m 256,512 -o public/firacode-light -s 48
+        run: node scripts/download.js "Fira Code" 300;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-light.ttf;
+          npx msdf-bmfont -f json firacode-light.ttf -i charset.txt -m 256,512 -o public/firacode-light -s 48
 
       - name: Generate Fira Code Medium
-        run:  node scripts/download.js "Fira Code" 500;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode.ttf;
-              npx msdf-bmfont -f json firacode.ttf -i charset.txt -m 256,512 -o public/firacode -s 48
+        run: node scripts/download.js "Fira Code" 500;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode.ttf;
+          npx msdf-bmfont -f json firacode.ttf -i charset.txt -m 256,512 -o public/firacode -s 48
 
       - name: Generate Fira Code Bold
-        run:  node scripts/download.js "Fira Code" 700;
-              fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-bold.ttf;
-              npx msdf-bmfont -f json firacode-bold.ttf -i charset.txt -m 256,512 -o public/firacode-bold -s 48
-      
+        run: node scripts/download.js "Fira Code" 700;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf firacode-bold.ttf;
+          npx msdf-bmfont -f json firacode-bold.ttf -i charset.txt -m 256,512 -o public/firacode-bold -s 48
+
+      # Oswald
+
+      - name: Generate Oswald Light
+        run: node scripts/download.js "Oswald" 300;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf oswald-light.ttf;
+          npx msdf-bmfont -f json oswald-light.ttf -i charset.txt -m 256,512 -o public/oswald-light -s 48
+
+      - name: Generate Oswald Medium
+        run: node scripts/download.js "Oswald" 500;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf oswald.ttf;
+          npx msdf-bmfont -f json oswald.ttf -i charset.txt -m 256,512 -o public/oswald -s 48
+
+      - name: Generate Oswald Bold
+        run: node scripts/download.js "Oswald" 700;
+          fontforge -lang=ff -c 'Open($1); SelectAll(); RemoveOverlap(); Generate($2)' font.ttf oswald-bold.ttf;
+          npx msdf-bmfont -f json oswald-bold.ttf -i charset.txt -m 256,512 -o public/oswald-bold -s 48
+
       - name: Convert to Webp
-        run:  npx sharp --lossless -i public/*.png -o public/ -f webp
+        run: npx sharp --lossless -i public/*.png -o public/ -f webp
 
       - name: Replace file png files
         run: |
